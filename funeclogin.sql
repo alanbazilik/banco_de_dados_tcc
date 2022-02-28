@@ -3,7 +3,7 @@ nome_usuario varchar(80),
 senha_usuario varchar(80)
 );
 Create TABLE fornecedor(
-codigo_fornecedor primary key	
+codigo_fornecedor serial primary key,	
 nome_empresa varchar(80),
 razao_social varchar(80),	
 Rg varchar(80),
@@ -18,7 +18,7 @@ celular varchar(80),
 fk_fornecedor int	
 );
 Create TABLE Cliente(
-codigo_cliente primary key	
+codigo_cliente serial primary key,	
 nome_cliente varchar(80),
 Rg varchar(80),
 cpf varchar(80),
@@ -32,7 +32,7 @@ celular varchar(80),
 fk_cliente int	
 );
 Create TABLE funcionario_1(
-codigo_funcionario primary key	
+codigo_funcionario serial primary key,	
 nome_funcionario varchar(80),
 setor_1 varchar(80), 
 Rg varchar(80),
@@ -47,7 +47,7 @@ celular varchar(80),
 fk_funcionario1 int	
 );
 Create TABLE funcionario_2(
-codigo_funcionario_2 primary key	
+codigo_funcionario_2 serial primary key,	
 nome_funcionario_2 varchar(80),
 setor_2 varchar(80), 
 Rg varchar(80),
@@ -62,7 +62,7 @@ celular varchar(80),
 fk_funcionario2 int	
 );
 Create TABLE Compras(
-cod_barras_C primary key,
+cod_barras_C serial primary key,
 produto varchar(80),
 quantidade varchar(80),
 valor varchar(80),
@@ -71,7 +71,7 @@ fk_compras int,
    references funcionario_2(codigo_funcionario)
 );
 Create TABLE Vendas(
-cod_barras_v primary key,
+cod_barras_v serial primary key,
 produto varchar(80),
 quantidade varchar(80),
 valor varchar(80),
@@ -82,7 +82,7 @@ fk_Vendas int,
    references funcionario_2(codigo_funcionario_2)
 );
 Create TABLE produto(
-cod_barras primary key,
+cod_barras serial primary key,
 produto varchar(80),
 quantidade varchar(80),
 valor varchar(80),
@@ -91,7 +91,7 @@ fk_produto int,
    references funcionario_2(codigo_fornecedor)
 );
 Create TABLE Estoques(
-cod_barra primary key,
+cod_barra serial primary key,
 produto varchar(80),
 quantidade varchar(80),
 valor varchar(80),	
